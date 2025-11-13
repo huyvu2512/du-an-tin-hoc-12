@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+    HUY VŨ - Trang xem phim số 1 Bắc Giang
+  </title>
+  <link rel="icon" type="image/png" href="https://i.postimg.cc/Z9H90Pdb/Screenshot-12-1.png">
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+    .text-outline-white {
+      text-shadow: 2px 2px 0 #fff, -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff;
+    }
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+    /* Đảm bảo select không có giao diện mặc định */
+    select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+  </style>
+  <script>
+    function validateAndRedirect(inputId, errorMsgId) {
+      const emailInput = document.getElementById(inputId);
+      const errorMsgElement = document.getElementById(errorMsgId);
+      const email = emailInput.value.trim();
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      errorMsgElement.textContent = '';
+
+      if (email === '') {
+        errorMsgElement.textContent = 'Vui lòng nhập địa chỉ email.';
+        emailInput.focus();
+        return false;
+      }
+
+      if (!emailPattern.test(email)) {
+        errorMsgElement.textContent = 'Vui lòng nhập địa chỉ email hợp lệ.';
+        emailInput.focus();
+        return false;
+      }
+      window.location.href = '2.dangnhap.html';
+      return true;
+    }
+  </script>
+</head>
+<body class="bg-black text-white">
+
+  <header class="relative z-20">
+    <div class="absolute top-0 left-0 right-0 flex justify-between items-center w-full px-4 sm:px-8 py-4">
+      <a href="#" class="cursor-pointer p-4 -ml-4">
+        <img alt="Logo Huy Vũ (Netflix style)" class="h-12 sm:h-16" src="https://i.postimg.cc/L6dtzvbR/Screenshot-12-1.png"/>
+      </a>
+      <div class="flex items-center space-x-2 sm:space-x-4 ml-auto">
+        <div class="inline-block relative">
+          <label for="language-select-top" class="sr-only">Chọn ngôn ngữ</label>
+          <select id="language-select-top" name="language-select-top" class="block appearance-none bg-gray-700 border border-gray-600 hover:border-gray-500 pl-4 py-1 sm:pl-5 sm:py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline text-white text-xs sm:text-sm">
+            <option value="vi">Tiếng Việt</option>
+            <option value="en">English</option>
+          </select>
+          <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-400">
+            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+          </div>
+        </div>
+        <button class="bg-red-600 hover:bg-red-700 text-white py-1 px-4 sm:py-2 sm:px-5 rounded text-xs sm:text-sm flex items-center justify-center" onclick="window.location.href='2.dangnhap.html'">
+          Đăng nhập
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+     <section class="relative h-screen w-full">
+       <img alt="Ảnh nền các chương trình Netflix" class="absolute inset-0 w-full h-full object-cover opacity-50" height="1080" src="https://assets.nflxext.com/ffe/siteui/vlv3/04ef06cc-5f81-4a8e-8db0-6430ba4af286/web/VN-vi-20250224-TRIFECTA-perspective_9fe85be7-afd9-4585-88fc-575a9825bf7a_large.jpg" width="1920"/>
+       <div class="absolute inset-0 bg-black bg-opacity-60">
+       </div>
+       <div class="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center pt-20 sm:pt-0">
+         <div class="max-w-xl md:max-w-2xl mx-auto">
+           <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold">
+             Phim, series không giới hạn và nhiều nội dung khác
+           </h1>
+           <p class="mt-4 text-lg sm:text-xl">
+             Giá từ 70.000 ₫. Hủy bất kỳ lúc nào.
+           </p>
+           <p class="mt-4 text-base sm:text-lg">
+             Bạn đã sẵn sàng xem chưa? Nhập email để tạo hoặc kích hoạt lại tư cách thành viên của bạn.
+           </p>
+           <div class="mt-4">
+             <div class="flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-2">
+               <div class="w-full sm:w-2/3 max-w-md relative">
+                 <label for="email-top" class="sr-only">Địa chỉ email</label>
+                 <input class="py-3 px-4 w-full rounded bg-white text-black placeholder-gray-500" id="email-top" placeholder="Địa chỉ email" type="email" required/>
+               </div>
+               <button class="bg-red-600 hover:bg-red-700 text-white py-3 px-4 sm:px-6 rounded w-full sm:w-auto flex items-center justify-center" onclick="validateAndRedirect('email-top', 'error-msg-top')">
+                 <span class="text-lg sm:text-xl">Bắt đầu</span>
+                 <i class="fas fa-chevron-right ml-2" aria-hidden="true"></i>
+               </button>
+             </div>
+             <p id="error-msg-top" class="text-red-500 text-sm mt-2 h-5"></p>
+           </div>
+         </div>
+       </div>
+     </section>
+
+     <section class="container mx-auto px-4 py-8 sm:py-12">
+       <h2 class="text-2xl sm:text-3xl font-semibold mb-4 sm:mb-6">
+         Hiện đang thịnh hành
+       </h2>
+       <div class="flex space-x-4 overflow-x-auto pb-4 -mx-4 px-4">
+         <div class="relative flex-shrink-0 w-36 sm:w-48">
+           <a href="2.dangnhap.html">
+             <img alt="Poster phim Đèn Âm Hồn" class="w-full h-54 sm:h-72 object-cover rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105" height="300" src="https://iguov8nhvyobj.vcdn.cloud/media/catalog/product/cache/1/image/c5f0a1eff4c394a251036189ccddaacd/m/a/main_ah_social-1.jpg" width="200"/>
+           </a>
+           <div class="absolute -bottom-1 -left-2 sm:bottom-2 sm:-left-4 text-6xl sm:text-8xl font-extrabold text-black text-outline-white" aria-hidden="true">1</div>
+         </div>
+         <div class="relative flex-shrink-0 w-36 sm:w-48">
+           <a href="2.dangnhap.html">
+             <img alt="Poster phim Nụ Hôn Bạc Tỷ" class="w-full h-54 sm:h-72 object-cover rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105" height="300" src="https://iguov8nhvyobj.vcdn.cloud/media/catalog/product/cache/3/image/1800x/71252117777b696995f01934522c402d/4/7/470wx700h-nuhonbacty.jpg" width="200"/>
+           </a>
+           <div class="absolute -bottom-1 -left-2 sm:bottom-2 sm:-left-4 text-6xl sm:text-8xl font-extrabold text-black text-outline-white" aria-hidden="true">2</div>
+         </div>
+          <div class="relative flex-shrink-0 w-36 sm:w-48">
+           <a href="2.dangnhap.html">
+             <img alt="Poster phim Thành lũy 36" class="w-full h-54 sm:h-72 object-cover rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105" height="300" src="https://images2.thanhnien.vn/528068263637045248/2024/2/19/18a-1708362773728296435986.jpg" width="200"/>
+           </a>
+           <div class="absolute -bottom-1 -left-2 sm:bottom-2 sm:-left-4 text-6xl sm:text-8xl font-extrabold text-black text-outline-white" aria-hidden="true">3</div>
+         </div>
+         <div class="relative flex-shrink-0 w-36 sm:w-48">
+           <a href="2.dangnhap.html">
+             <img alt="Poster phim Bộ Tứ Báo Thù" class="w-full h-54 sm:h-72 object-cover rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105" height="300" src="https://api-website.cinestar.com.vn/media/wysiwyg/Posters/01-2025/bo-tu-bao-thu-official.jpg" width="200"/>
+           </a>
+           <div class="absolute -bottom-1 -left-2 sm:bottom-2 sm:-left-4 text-6xl sm:text-8xl font-extrabold text-black text-outline-white" aria-hidden="true">4</div>
+         </div>
+         <div class="relative flex-shrink-0 w-36 sm:w-48">
+           <a href="2.dangnhap.html">
+             <img alt="Poster phim MAI" class="w-full h-54 sm:h-72 object-cover rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105" height="300" src="https://img.cand.com.vn/resize/800x800/NewFiles/Images/2024/02/21/Phim_Mai_cua_Tran_Thanh_ra_rap_T-1708499870483.jpg" width="200"/>
+           </a>
+           <div class="absolute -bottom-1 -left-2 sm:bottom-2 sm:-left-4 text-6xl sm:text-8xl font-extrabold text-black text-outline-white" aria-hidden="true">5</div>
+         </div>
+         <div class="relative flex-shrink-0 w-36 sm:w-48">
+           <a href="2.dangnhap.html">
+             <img alt="Poster phim Lật Mặt 7: Một Điều Ước" class="w-full h-54 sm:h-72 object-cover rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105" height="300" src="https://upload.wikimedia.org/wikipedia/vi/d/d4/%C3%81p_ph%C3%ADch_ch%C3%ADnh_th%E1%BB%A9c_L%E1%BA%ADt_m%E1%BA%B7t_7.jpg" width="200"/>
+           </a>
+           <div class="absolute -bottom-1 -left-2 sm:bottom-2 sm:-left-4 text-6xl sm:text-8xl font-extrabold text-black text-outline-white" aria-hidden="true">6</div>
+         </div>
+         <div class="relative flex-shrink-0 w-36 sm:w-48">
+           <a href="2.dangnhap.html">
+             <img alt="Poster phim Yêu Nhầm Bạn Thân" class="w-full h-54 sm:h-72 object-cover rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105" height="300" src="https://iguov8nhvyobj.vcdn.cloud/media/catalog/product/cache/1/image/c5f0a1eff4c394a251036189ccddaacd/m/a/main_social_1_.jpg" width="200"/>
+           </a>
+           <div class="absolute -bottom-1 -left-2 sm:bottom-2 sm:-left-4 text-6xl sm:text-8xl font-extrabold text-black text-outline-white" aria-hidden="true">7</div>
+         </div>
+       </div>
+     </section>
+
+     <section class="container mx-auto px-4 py-8 sm:py-12">
+       <h2 class="text-2xl sm:text-3xl font-semibold mt-8 mb-4 sm:mb-6 text-center">
+         Thêm lý do để tham gia
+       </h2>
+       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+         <div class="bg-gradient-to-b from-gray-900 to-black p-4 rounded-lg border border-gray-700">
+           <h3 class="text-lg font-semibold mb-2">
+             Thưởng thức trên TV của bạn
+           </h3>
+           <p class="text-sm text-gray-300">
+             Xem trên TV thông minh, Playstation, Xbox, Chromecast, Apple TV, đầu phát Blu-ray và nhiều thiết bị khác.
+           </p>
+         </div>
+         <div class="bg-gradient-to-b from-gray-900 to-black p-4 rounded-lg border border-gray-700">
+           <h3 class="text-lg font-semibold mb-2">
+             Tải xuống nội dung để xem ngoại tuyến
+           </h3>
+           <p class="text-sm text-gray-300">
+             Lưu lại những nội dung yêu thích một cách dễ dàng và luôn có thứ để xem.
+           </p>
+         </div>
+         <div class="bg-gradient-to-b from-gray-900 to-black p-4 rounded-lg border border-gray-700">
+           <h3 class="text-lg font-semibold mb-2">
+             Xem ở mọi nơi
+           </h3>
+           <p class="text-sm text-gray-300">
+             Phát trực tuyến không giới hạn phim và series trên điện thoại, máy tính bảng, máy tính xách tay và TV.
+           </p>
+         </div>
+         <div class="bg-gradient-to-b from-gray-900 to-black p-4 rounded-lg border border-gray-700">
+           <h3 class="text-lg font-semibold mb-2">
+             Tạo hồ sơ cho trẻ em
+           </h3>
+           <p class="text-sm text-gray-300">
+             Đưa các em vào những cuộc phiêu lưu với nhân vật được yêu thích trong một không gian riêng. Tính năng này đi kèm miễn phí với tư cách thành viên của bạn.
+           </p>
+         </div>
+       </div>
+     </section>
+
+     <section class="bg-black text-white py-8 sm:py-12">
+       <div class="max-w-xl md:max-w-2xl mx-auto text-center px-4">
+         <h2 class="text-2xl sm:text-3xl font-bold">
+           Bạn đã sẵn sàng xem chưa?
+         </h2>
+         <p class="mt-4 text-base sm:text-lg">
+           Nhập email để tạo hoặc kích hoạt lại tư cách thành viên của bạn.
+         </p>
+          <div class="mt-4">
+           <div class="flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-2">
+             <div class="w-full sm:w-2/3 max-w-md relative">
+               <label for="email-bottom" class="sr-only">Địa chỉ email</label>
+               <input class="py-3 px-4 w-full rounded bg-white text-black placeholder-gray-500" id="email-bottom" placeholder="Địa chỉ email" type="email" required/>
+             </div>
+             <button class="bg-red-600 hover:bg-red-700 text-white py-3 px-4 sm:px-6 rounded w-full sm:w-auto flex items-center justify-center" onclick="validateAndRedirect('email-bottom', 'error-msg-bottom')">
+               <span class="text-lg sm:text-xl">Bắt đầu</span>
+               <i class="fas fa-chevron-right ml-2" aria-hidden="true"></i>
+             </button>
+           </div>
+            <p id="error-msg-bottom" class="text-red-500 text-sm mt-2 h-5"></p>
+          </div>
+       </div>
+     </section>
+  </main>
+
+  <div class="w-full h-2 bg-gray-800"></div>
+
+  <footer class="py-8 sm:py-12 text-gray-400 text-sm bg-black">
+    <div class="container mx-auto px-4">
+      <p class="mb-4">
+        <a href="https://help.netflix.com/contactus" class="hover:underline">Bạn có câu hỏi? Liên hệ với chúng tôi.</a>
+      </p>
+      <div class="mb-4">
+        <ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 text-xs sm:text-sm">
+          <li><a href="https://help.netflix.com/support/412" class="hover:underline">Câu hỏi thường gặp</a></li>
+          <li><a href="https://help.netflix.com" class="hover:underline">Trung tâm trợ giúp</a></li>
+          <li><a href="/youraccount" class="hover:underline">Tài khoản</a></li>
+          <li><a href="https://media.netflix.com/" class="hover:underline">Trung tâm đa phương tiện</a></li>
+          <li><a href="http://ir.netflix.com/" class="hover:underline">Quan hệ với nhà đầu tư</a></li>
+          <li><a href="https://jobs.netflix.com/jobs" class="hover:underline">Việc làm</a></li>
+          <li><a href="/watch" class="hover:underline">Các cách xem</a></li>
+          <li><a href="https://help.netflix.com/legal/termsofuse" class="hover:underline">Điều khoản sử dụng</a></li>
+          <li><a href="https://help.netflix.com/legal/privacy" class="hover:underline">Quyền riêng tư</a></li>
+          <li><a href="#" class="hover:underline">Tùy chọn cookie</a></li>
+          <li><a href="https://help.netflix.com/legal/corpinfo" class="hover:underline">Thông tin doanh nghiệp</a></li>
+          <li><a href="https://help.netflix.com/contactus" class="hover:underline">Liên hệ với chúng tôi</a></li>
+          <li><a href="https://fast.com" class="hover:underline">Kiểm tra tốc độ</a></li>
+          <li><a href="https://help.netflix.com/legal/notices" class="hover:underline">Thông báo pháp lý</a></li>
+          <li><a href="https://www.netflix.com/vn/browse/genre/839338" class="hover:underline">Chỉ có trên Netflix</a></li>
+        </ul>
+      </div>
+      <div class="mb-4">
+        <div class="inline-block relative w-32">
+          <label for="language-select-bottom" class="sr-only">Chọn ngôn ngữ</label>
+          <select id="language-select-bottom" name="language-select-bottom" class="block appearance-none w-full bg-gray-700 border border-gray-600 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline text-white text-sm">
+            <option value="vi">Tiếng Việt</option>
+            <option value="en">English</option>
+          </select>
+          <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-400">
+            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p>Huy Vũ - Website số 1 Bắc Giang</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

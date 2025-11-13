@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        .navbar {
+            transition: background-color 0.3s ease-in-out, top 0.3s ease-in-out;
+            background-color: black;
+            top: 0;
+        }
+        .scroll-offset {
+            scroll-margin-top: 4rem; /* Adjust this value based on the height of your navbar */
+        }
+    </style>
+</head>
+<body class="bg-black text-white font-roboto">
+    <header id="navbar" class="navbar flex items-center justify-between p-4 fixed left-0 w-full z-50">
+        <div class="flex items-center space-x-4">
+            <a href="3.trangchu.html">
+                <img alt="Netflix logo" class="h-10" src="https://i.postimg.cc/L6dtzvbR/Screenshot-12-1.png" width="150"/>
+            </a>
+            <nav class="hidden md:flex space-x-4">
+                <a class="text-white hover:text-gray-400" href="#">Trang chủ</a>
+                <a class="text-white hover:text-gray-400" href="#">Series</a>
+                <a class="text-white hover:text-gray-400" href="#">Phim</a>
+                <a class="text-white hover:text-gray-400" href="#">Mới & Phổ biến</a>
+                <a class="text-white hover:text-gray-400" href="#">Danh sách của tôi</a>
+                <a class="text-white hover:text-gray-400" href="#">Duyệt tìm theo ngôn ngữ</a>
+            </nav>
+        </div>
+        <div class="flex items-center space-x-4">
+            <i class="fas fa-search text-white"></i>
+            <i class="fas fa-bell text-white"></i>
+            <img alt="User profile" class="h-10 rounded" src="https://storage.googleapis.com/a1aa/image/pQrokMEg7BJFBLHHB828f-qEvU0NfXUxrpZMtPq26bs.jpg" width="40"/>
+        </div>
+    </header>
+
+    <div class="flex mt-16">
+        <aside class="w-1/6 p-4 bg-gray-800 text-white fixed h-full">
+            <h2 class="text-xl font-bold mb-4">Mục lục</h2>
+            <ul class="space-y-2">
+                <li><a href="#section1" class="text-white hover:text-gray-400">1. Lập trình web là gì?</a></li>
+                <li><a href="#section2" class="text-white hover:text-gray-400">2. Lập trình web là làm gì?</a></li>
+                <li><a href="#section3" class="text-white hover:text-gray-400">3. Học lập trình web ra làm gì?</a></li>
+                <li><a href="#section3-1" class="text-white hover:text-gray-400 ml-4">3.1 Làm freelancer hoặc tự thành lập công ty riêng về lập trình web</a></li>
+                <li><a href="#section3-2" class="text-white hover:text-gray-400 ml-4">3.2 Front-end Developer</a></li>
+                <li><a href="#section3-3" class="text-white hover:text-gray-400 ml-4">3.3 Back-end Developer</a></li>
+                <li><a href="#section3-4" class="text-white hover:text-gray-400 ml-4">3.4 Full-stack Developer</a></li>
+                <li><a href="#section3-5" class="text-white hover:text-gray-400 ml-4">3.5 Chuyên viên phân tích kinh doanh - Business Analyst</a></li>
+                <li><a href="#section4" class="text-white hover:text-gray-400">4. Cơ hội nghề nghiệp dành cho lập trình viên web</a></li>
+                <li><a href="#section5" class="text-white hover:text-gray-400">5. Học lập trình web có khó không? Những kiến thức và kỹ năng cần có</a></li>
+                <li><a href="#section5-1" class="text-white hover:text-gray-400 ml-4">5.1 Kiến thức về lập trình</a></li>
+            </ul>
+        </aside>
+
+        <section class="p-8 bg-white text-black ml-1/6 w-5/6 ml-64">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-5xl font-bold mb-5 w-full text-center">Lập trình web là gì?</h1>
+
+                <p class="text-lg text-gray-700 mb-6">Lập trình web là một trong những ngành nghề được các công ty công nghệ săn đón nhiệt tình trong thời đại số ngày nay. Mặc dù làn sóng lay off tại các công ty công nghệ đang khốc liệt nhưng nhu cầu tuyển dụng IT lập trình web  chất lượng cao vẫn cực nóng sốt. Cụ thể lập trình web là gì, đâu là cơ hội nghề nghiệp dành cho ngành nghề này? Bạn đọc hãy cùng TopCV tìm hiểu qua bài viết sau đây!</p>
+
+                <h2 id="section1" class="text-2xl font-semibold mb-3 scroll-offset">1. Lập trình web là gì?</h2>
+                <p class="text-lg text-gray-700 mb-6">Lập trình web là công việc của một Web Developer - Lập trình viên web. Lập trình web bao gồm việc nhận dữ liệu và yêu cầu từ bộ phận thiết kế, sau đó sử dụng ngôn ngữ lập trình để tạo ra một hệ thống website hoàn chỉnh có cơ sở dữ liệu, có tương tác với người dùng.</p>
+                <img src="https://static.topcv.vn/cms/lap-trinh-web-la-gi-topcv-164b4a824ee695.jpg" alt="Lập trình web" class="w-full rounded-lg mb-6">
+
+                <h2 id="section2" class="text-2xl font-semibold mb-3 scroll-offset">2. Lập trình web là làm gì?</h2>
+                <p class="text-gray-700 mb-4">Bên cạnh việc tạo ra website hoàn chỉnh theo mẫu thiết kế được yêu cầu, lập trình viên web còn có thể đảm nhiệm việc quản trị website theo phân công của quản lý. Vì sau khi website thành hình, cần có thêm một số công cụ để hỗ trợ quản lý website đơn giản hơn.</p>
+                <p class="text-gray-700 mb-4">Những công cụ đó giúp những người không có kiến thức về IT cũng có thể sử dụng website một cách dễ dàng. Người dùng có thể kiểm tra được nguồn traffic đổ về web, tỷ lệ thoát trang, số lần uptime, downtime, tình trạng quá tải băng thông, v.vv..</p>
+                <p class="text-gray-700 mb-4">Tóm lại, công việc chính của một Web Developer bao gồm: Lập trình nên website hoàn chỉnh và hỗ trợ quản trị website.</p>
+                <img src="https://static.topcv.vn/cms/lap-trinh-web-la-gi-topcv-264b4a834cbb0c.jpg" alt="Lập trình web" class="w-full rounded-lg mb-6">
+
+                <h2 id="section3" class="text-2xl font-semibold mb-3 scroll-offset">3. Học lập trình web ra làm gì?</h2>
+                <p class="text-gray-700 mb-4">Lập trình web là một trong những ngành nghề hot được nhiều bạn trẻ quan tâm. Vì nghề này không chỉ mang lại một mức lương hấp dẫn ngay khi mới tốt nghiệp, mà còn mở ra cơ hội rẽ nhánh sang các vị trí liên quan trong ngành công nghệ thông tin.</p>
+
+                <h3 id="section3-1" class="text-2xl font-semibold mb-3 scroll-offset">3.1 Làm freelancer hoặc tự thành lập công ty riêng về lập trình web</h3>
+                <p class="text-gray-700 mb-4">Những lập trình viên web sau nhiều năm đi làm, tích lũy cho mình đủ kinh nghiệm và nguồn vốn hoàn toàn có thể tự mở công ty riêng, hoặc làm freelance, tự nhận các dự án thiết kế website cho khách hàng nào có nhu cầu.</p>
+                <p class="text-gray-700 mb-4">Đây chắc hẳn là ước mơ của rất nhiều người, vì không chỉ chủ động được thời gian làm việc, còn có cơ hội gia tăng thu nhập không giới hạn. Lúc này, khách hàng của bạn không phải chỉ là những cá nhân, tổ chức trong nước mà còn có cả khách nước ngoài.</p>
+                <p class="text-gray-700 mb-4">Thù lao theo đó tăng lên, mà cơ hội trải nghiệm những xu hướng công nghệ mới cũng được gia tăng. Dù vậy, bạn cần có khả năng quản lý tài chính tốt nếu như muốn thử sức với việc tự làm chủ.</p>
+                <img src="https://static.topcv.vn/cms/lap-trinh-web-la-gi-topcv-864b4a89f719e6.jpg" alt="Lập trình web" class="w-full rounded-lg mb-6">
+
+                <h3 id="section3-2" class="text-xl font-semibold mb-2 scroll-offset">3.2 Front-end Developer</h3>
+                <p class="text-gray-700 mb-4">Front-end Developer là người đảm nhiệm việc thiết kế giao diện của một website, xây dựng, bảo trì, đảm bảo tính tương thích của web với các trình duyệt khác nhau, đồng thời gia tăng trải nghiệm cho người dùng.</p>
+                <p class="text-gray-700 mb-4">Để làm tốt công việc của một Front-end Developer, bạn cần có hiểu biết về các công cụ và phần mềm thiết kế, bao gồm Figma, Adobe Photoshop, Sketch, CSS Frameworks, v.vv.. nhằm tạo ra những giao diện website đẹp mắt và dễ sử dụng nhất.</p>
+                <p class="text-gray-700 mb-4">Đồng thời, Front-end Developer nhất định phải sử dụng tốt các ngôn ngữ lập trình như CSS, HTML và JavaScript.</p>
+                <img src="https://static.topcv.vn/cms/lap-trinh-web-la-gi-topcv-364b4a84800317.jpg" alt="Lập trình web" class="w-full rounded-lg mb-6">
+                
+                <h3 id="section3-3" class="text-xl font-semibold mb-2 scroll-offset">3.3 Back-end Developer</h3>
+                <p class="text-gray-700 mb-4">Công việc của Back-end Developer gắn liền với Front-end Developer. Vì một website không thể nào chỉ có giao diện mà không thực hiện được chức năng. Nhiệm vụ của Back-end Developer chính là tạo ra chức năng cho một website.</p>
+                <p class="text-gray-700 mb-4">Vị trí Back-end Developer tập trung vào việc phát triển phần mềm, cơ sở dữ liệu bên trong và các API (Application Programming Interface) cho website. Mục tiêu là bảo mật thông tin, quản lý truy cập, đảm bảo website hoạt động ổn định, các tác vụ quản trị diễn ra trơn tru.</p>
+                <p class="text-gray-700 mb-4">Để tạo ra cơ sở dữ liệu và phần mềm cho web, các Back-end Developer cần thông thạo ngôn ngữ lập trình như Java, PHP, C#, Ruby, Python và Node.js.</p>
+                
+                <h3 id="section3-4" class="text-xl font-semibold mb-2 scroll-offset">3.4 Full-stack Developer</h3>
+                <p class="text-gray-700 mb-4">Full-stack Developer là người thành thạo cả hai công việc Front-end và Back-end. Trở thành một lập trình viên web Full-stack nghĩa là bạn phải đảm nhiệm việc phát triển website trong suốt vòng đời của một dự án.</p>
+                <p class="text-gray-700 mb-4">Ở mỗi doanh nghiệp, công việc của lập trình viên web Full-stack sẽ khác nhau. Tuy nhiên, họ đều là người có nhiều năm kinh nghiệm và có nền tảng vững chắc về phát triển web. Chủ yếu họ sẽ theo dõi hoạt động của web, khắc phục các sự cố và quản lý các công việc liên quan.</p>
+                <img src="https://static.topcv.vn/cms/lap-trinh-web-la-gi-topcv-464b4a861d3ce6.jpg" alt="Lập trình web" class="w-full rounded-lg mb-6">
+
+                <h3 id="section3-5" class="text-xl font-semibold mb-2 scroll-offset">3.5 Chuyên viên phân tích kinh doanh - Business Analyst</h3>
+                <p class="text-gray-700 mb-4">Thông thường, các lập trình viên là người hiểu rõ nhất về sản phẩm công nghệ của mình, tuy nhiên không phải ai cũng hiểu được người dùng sản phẩm công nghệ ấy. Muốn cải thiện chất lượng cho website, một developer cần hiểu được mong muốn của người dùng.</p>
+                <p class="text-gray-700 mb-4">Nhiều lập trình viên web đã chuyển hướng sang làm chuyên viên phân tích kinh doanh - Business Analyst (BA). Họ hiểu khách hàng, hiểu người dùng, lại nắm rõ cách code, viết được code theo ngôn ngữ dễ hiểu hơn để gia tăng trải nghiệm cho người dùng.</p>
+                <p class="text-gray-700 mb-4">BA cũng chính là một trong những nghề nghiệp được nhiều bạn trẻ mong muốn theo đuổi nhất hiện nay. Công việc này không quá thiên về ngôn ngữ lập trình nhưng cần có tư duy kinh doanh để đưa ra những phương án phát triển website, phần mềm tối ưu nhất.</p>
+            
+                <h2 id="section4" class="text-2xl font-semibold mb-3 scroll-offset">4. Cơ hội nghề nghiệp dành cho lập trình viên web</h2>
+                <p class="text-gray-700 mb-4">Theo báo cáo Thị trường tuyển dụng 2022 & Nhu cầu tuyển dụng 2023 của TopCV, IT phần mềm là một trong 3 ngành được các doanh nghiệp tuyển dụng nhiều nhất, nhưng cũng khó tuyển nhất do ứng viên chưa đáp ứng đủ kỹ năng chuyên môn cũng như kinh nghiệm thực tế.</p>
+                <p class="text-gray-700 mb-4">Dự đoán nhu cầu tuyển dụng ngành IT phần mềm sẽ tiếp tục tăng mạnh trong năm nay. Vì thế cơ hội nghề nghiệp cho nhân sự ngành công nghệ thông tin sẽ rất rộng mở. Nếu bạn có kỹ năng lập trình, muốn theo đuổi nghề lập trình web thì chắc chắn không lo thiếu việc làm.</p>
+                <p class="text-gray-700 mb-4">Tuy nhiên, thị trường ngành IT phần mềm vô cùng cạnh tranh. Các doanh nghiệp đều tìm kiếm những nhân sự có trình độ chuyên môn cao. Tiêu chuẩn từ phía doanh nghiệp và khách hàng ngày càng tăng, gây ra áp lực lớn cho người lao động theo đuổi ngành CNTT.</p>
+                <p class="text-gray-700 mb-4">Vì thế, bạn sẽ phải nỗ lực rất nhiều để có thể thăng tiến trên con đường ngày. Sự sáng tạo, theo đuổi xu hướng và khả năng thích nghi là những yếu tố không thể thiếu để bạn có thể trụ vững với nghề.</p>
+                <img src="https://static.topcv.vn/cms/lap-trinh-web-la-gi-topcv-864b4a94007436.jpg" alt="Lập trình web" class="w-full rounded-lg mb-6">
+
+                <h2 id="section5" class="text-xl font-semibold mb-2 scroll-offset">5. Học lập trình web có khó không? Những kiến thức và kỹ năng cần có</h2>
+                <p class="text-gray-700 mb-4">Với những bạn có tư duy về toán học và công nghệ thông tin nhạy bén thì việc học và làm lập trình web sẽ không quá thử thách. Còn nếu bạn hoàn toàn không phải một dân chuyên thì sẽ phải học tập chăm chỉ hơn để có được những kiến thức và kỹ năng cơ bản.</p>
+                <p class="text-gray-700 mb-4">Vậy, lập trình web nên học ngôn ngữ nào? Cần có những kỹ năng gì? Cần những chứng chỉ gì để dễ xin việc?</p>
+                
+                <h3 id="section5-1" class="text-xl font-semibold mb-2 scroll-offset">5.1 Kiến thức về lập trình</h3>
+                <p class="text-gray-700 mb-4">Dưới đây là những kiến thức nền tảng mà mọi lập trình viên website đều cần trang bị:</p>
+                <p class="text-gray-700 mb-4">• Ngôn ngữ lập trình: Thành thạo nhiều ngôn ngữ lập trình khác nhau, hiểu được và viết được code bằng các ngôn ngữ bao gồm HTML, JavaScript, CSS, PHP, Ruby, Python, C#, Node.js, v.vv..</p>
+                <p class="text-gray-700 mb-4">• Thiết kế giao diện UI: Người dùng có thể dùng nhiều thiết bị khác nhau để truy cập vào website như laptop, smartphone, máy tính bảng, v.vv.. Với mỗi thiết bị, giao diện của web lại có sự thay đổi. Thậm chí, với các hệ điều hành khác nhau

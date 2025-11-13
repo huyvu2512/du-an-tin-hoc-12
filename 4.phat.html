@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Về Lập Trình Viên</title>
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script>
+    function onYouTubeIframeAPIReady() {
+      new YT.Player('youtube-player', {
+        height: '100%',
+        width: '100%',
+        videoId: 'lFXPQS9tEN4', // Thay bằng ID video của bạn
+        playerVars: {
+          autoplay: 1, 
+          controls: 1,
+          playsinline: 1  // Thêm playsinline để phát video ngay trong trình duyệt
+        }
+      });
+    }
+  </script>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+    #youtube-player {
+      width: 100vw;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <div id="youtube-player"></div>
+</body>
+</html>
