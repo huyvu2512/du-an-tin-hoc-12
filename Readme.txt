@@ -1,3 +1,5 @@
+Dự án tin học cuối kì 2 - Nhóm 3 - 12A2
+
 ─ Tài khoản: 12345678
 ─ Mật khẩu: 123
 
@@ -38,3 +40,4 @@
 │   ├── Các vị trí công việc (Frontend, Backend, Fullstack, Freelancer, Business Analyst)
 │   ├── Yêu cầu kỹ năng và kiến thức cần thiết cho lập trình viên web
 │   ├── Các hình ảnh minh họa về lập trình web
+
