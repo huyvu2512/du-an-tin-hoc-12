@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>HUY VŨ - Trang chủ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/Z9H90Pdb/Screenshot-12-1.png"> 
+    <style>
+        .navbar {
+            transition: background-color 0.3s ease-in-out, top 0.3s ease-in-out;
+            background-color: transparent;
+            top: 0;
+        }
+        .navbar.scrolled {
+            background-color: black;
+        }
+        .movie-banner {
+            width: 200px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        /* Đảm bảo select không có giao diện mặc định (Thêm từ footer) */
+        select {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+        }
+        /* CSS cho popup video */
+        #fullscreenVideo {
+          transition: opacity 0.3s ease-in-out;
+        }
+        #fullscreenVideo.hidden {
+          opacity: 0;
+          pointer-events: none; /* Ngăn tương tác khi ẩn */
+        }
+        #fullscreenVideo:not(.hidden) {
+          opacity: 1;
+        }
+
+    </style>
+</head>
+<body class="bg-black text-white font-roboto">
+
+    <header id="navbar" class="navbar flex items-center justify-between p-4 fixed left-0 w-full z-50">
+        <div class="flex items-center space-x-4">
+            <a href="3.trangchu.html">
+                <img alt="Logo Huy Vũ (Netflix style)" class="h-12 sm:h-16" src="https://i.postimg.cc/L6dtzvbR/Screenshot-12-1.png"/>
+            </a>
+            <nav class="hidden md:flex space-x-4">
+                <a class="text-white hover:text-gray-400 font-bold" href="#">Trang chủ</a>
+                <a class="text-white hover:text-gray-400" href="#">Series</a>
+                <a class="text-white hover:text-gray-400" href="#">Phim</a>
+                <a class="text-white hover:text-gray-400" href="#">Mới & Phổ biến</a>
+                <a class="text-white hover:text-gray-400" href="#">Danh sách của tôi</a>
+                <a class="text-white hover:text-gray-400" href="#">Duyệt tìm theo ngôn ngữ</a>
+            </nav>
+        </div>
+        <div class="relative flex items-center space-x-4">
+            <div class="relative">
+                <i class="fas fa-search text-white cursor-pointer" onclick="toggleSearch()"></i>
+                <div id="searchBar" class="hidden absolute right-0 mt-2 w-64 bg-gray-800 rounded-lg shadow-lg z-10">
+                    <input type="text" id="searchInput" class="w-full p-2 bg-gray-700 text-white rounded" placeholder="Tìm kiếm phim..." oninput="searchMovies()"/>
+                    <div id="searchResults" class="p-2 text-white max-h-60 overflow-y-auto"></div>
+                </div>
+            </div>
+            <div class="relative">
+                <i class="fas fa-bell text-white cursor-pointer" onclick="toggleNotifications()"></i>
+                <div id="notificationMenu" class="hidden absolute right-0 mt-2 w-64 bg-gray-800 rounded-lg shadow-lg z-10">
+                    <div class="p-4 text-white font-bold border-b border-gray-700">Thông báo</div>
+                    <div class="p-4 text-white">Không có thông báo</div>
+                </div>
+            </div>
+            <div class="relative">
+                <img alt="User profile" class="h-10 rounded cursor-pointer" src="https://storage.googleapis.com/a1aa/image/pQrokMEg7BJFBLHHB828f-qEvU0NfXUxrpZMtPq26bs.jpg" onclick="toggleProfileMenu()"/>
+                <div id="profileMenu" class="hidden absolute right-0 mt-2 w-48 bg-gray-800 rounded-lg shadow-lg z-10">
+                    <a href="#" class="block px-4 py-2 text-white hover:bg-gray-700 flex items-center space-x-2">
+                        <i class="fas fa-user-cog"></i>
+                        <span>Quản lý hồ sơ</span>
+                    </a>
+                    <a href="#" class="block px-4 py-2 text-white hover:bg-gray-700 flex items-center space-x-2">
+                        <i class="fas fa-user"></i>
+                        <span>Tài khoản</span>
+                    </a>
+                    <a href="#" class="block px-4 py-2 text-white hover:bg-gray-700 flex items-center space-x-2">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Trung tâm trợ giúp</span>
+                    </a>
+                    <a href="2.dangnhap.html" class="block px-4 py-2 text-white hover:bg-gray-700 flex items-center space-x-2">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Đăng xuất</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="relative w-screen h-screen">
+        <img alt="Banner Lập trình web" class="w-full h-full object-cover" src="https://i.pinimg.com/736x/d2/42/d5/d242d5606dd573a6b115bce46b0b767f.jpg" />
+        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black via-transparent to-transparent">
+            <div class="absolute bottom-0 p-8">
+                <h1 class="text-4xl md:text-6xl font-bold">Lập trình web là gì?</h1>
+                <p class="mt-4 text-lg md:text-xl max-w-lg">
+                    Lập trình web có thể tạo ra các trang tĩnh (static website) hoặc trang động (dynamic website) để phục vụ nhiều mục đích khác nhau như blog, thương mại điện tử, mạng xã hội...
+                </p>
+                <div class="mt-4 flex space-x-4">
+                    <a href="4.phat.html" class="bg-white text-black px-6 py-2 rounded flex items-center space-x-2 hover:bg-gray-200 transition">
+                        <i class="fas fa-play"></i>
+                        <span>Phát</span>
+                    </a>
+                    <a href="5.laptrinhweb.html" class="bg-gray-700 text-white px-6 py-2 rounded hover:bg-gray-600 transition">Thông tin khác</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="p-8">
+        <h2 class="text-2xl font-bold mb-4 text-red-500">Phim Việt Nam</h2>
+        <div class="flex space-x-4 overflow-x-auto pb-4" id="movieList">
+            <div class="w-48 flex-shrink-0 relative group cursor-pointer" onclick="showYoutubeFullscreen('E7exHaPHDeM')">
+                <img alt="Poster phim Đèn Âm Hồn" class="movie-banner transition duration-300 group-hover:brightness-110"
+                     src="https://iguov8nhvyobj.vcdn.cloud/media/catalog/product/cache/1/image/c5f0a1eff4c394a251036189ccddaacd/m/a/main_ah_social-1.jpg"/>
+                <p class="mt-2 text-center text-white group-hover:text-yellow-300 transition duration-300 font-semibold">
+                    Đèn Âm Hồn
+                </p>
+            </div>
+
+            <div class="w-48 flex-shrink-0 relative group cursor-pointer" onclick="showYoutubeFullscreen('wr6MeifZCUs')">
+                <img alt="Poster phim Nụ Hôn Bạc Tỷ" class="movie-banner transition duration-300 group-hover:brightness-110"
+                     src="https://iguov8nhvyobj.vcdn.cloud/media/catalog/product/cache/3/image/1800x/71252117777b696995f01934522c402d/4/7/470wx700h-nuhonbacty.jpg"/>
+                <p class="mt-2 text-center text-white group-hover:text-yellow-300 transition duration-300 font-semibold">
+                    Nụ Hôn Bạc Tỷ
+                </p>
+            </div>
+
+            <div class="w-48 flex-shrink-0 relative group cursor-pointer" onclick="showYoutubeFullscreen('zKMOgOWn8lQ')">
+                <img alt="Poster phim Bộ Tứ Báo Thù" class="movie-banner transition duration-300 group-hover:brightness-110"
+                     src="https://api-website.cinestar.com.vn/media/wysiwyg/Posters/01-2025/bo-tu-bao-thu-official.jpg"/>
+                <p class="mt-2 text-center text-white group-hover:text-yellow-300 transition duration-300 font-semibold">
+                    Bộ Tứ Báo Thù
+                </p>
+            </div>
+
+            <div class="w-48 flex-shrink-0 relative group cursor-pointer" onclick="showYoutubeFullscreen('HXWRTGbhb4U')">
+                <img alt="Poster phim MAI" class="movie-banner transition duration-300 group-hover:brightness-110"
+                     src="https://img.cand.com.vn/resize/800x800/NewFiles/Images/2024/02/21/Phim_Mai_cua_Tran_Thanh_ra_rap_T-1708499870483.jpg"/>
+                <p class="mt-2 text-center text-white group-hover:text-yellow-300 transition duration-300 font-semibold">
+                    MAI
+                </p>
+            </div>
+
+            <div class="w-48 flex-shrink-0 relative group cursor-pointer" onclick="showYoutubeFullscreen('d1ZHdosjNX8')">
+                <img alt="Poster phim Lật Mặt 7: Một Điều Ước" class="movie-banner transition duration-300 group-hover:brightness-110"
+                     src="https://upload.wikimedia.org/wikipedia/vi/d/d4/%C3%81p_ph%C3%ADch_ch%C3%ADnh_th%E1%BB%A9c_L%E1%BA%ADt_m%E1%BA%B7t_7.jpg"/>
+                <p class="mt-2 text-center text-white group-hover:text-yellow-300 transition duration-300 font-semibold">
+                    Lật Mặt 7: Một Điều Ước
+                </p>
+            </div>
+
+            <div class="w-48 flex-shrink-0 relative group cursor-pointer" onclick="showYoutubeFullscreen('d7iXT864C4w')">
+                <img alt="Poster phim Yêu Nhầm Bạn Thân" class="movie-banner transition duration-300 group-hover:brightness-110"
+                     src="https://iguov8nhvyobj.vcdn.cloud/media/catalog/product/cache/1/image/c5f0a1eff4c394a251036189ccddaacd/m/a/main_social_1_.jpg"/>
+                <p class="mt-2 text-center text-white group-hover:text-yellow-300 transition duration-300 font-semibold">
+                    Yêu Nhầm Bạn Thân
+                </p>
+            </div>
+
+            <div class="w-48 flex-shrink-0 relative group cursor-pointer" onclick="showYoutubeFullscreen('c-ASaavjtPw')">
+                <img alt="Poster phim Đào, Phở Và Piano" class="movie-banner transition duration-300 group-hover:brightness-110"
+                     src="https://images2.thanhnien.vn/528068263637045248/2024/2/19/18a-1708362773728296435986.jpg"/>
+                <p class="mt-2 text-center text-white group-hover:text-yellow-300 transition duration-300 font-semibold">
+                    Đào, Phở Và Piano
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div id="fullscreenVideo" class="hidden fixed inset-0 bg-black bg-opacity-90 flex justify-center items-center z-50">
+         <button class="absolute top-4 right-4 text-white text-3xl z-10"
+                 onclick="closeFullscreen()">
+              <i class="fas fa-times bg-black bg-opacity-50 rounded-full p-2"></i>
+         </button>
+
+         <div class="relative w-full h-full max-w-screen-lg max-h-screen-md aspect-video bg-black">
+             <iframe id="youtubeFullscreenFrame" class="absolute top-0 left-0 w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+         </div>
+     </div>
+
+
+    <script>
+    const movies = [
+        { title: "Đèn Âm Hồn", videoId: "E7exHaPHDeM" },
+        { title: "Nụ Hôn Bạc Tỷ", videoId: "wr6MeifZCUs" },
+        { title: "Bộ Tứ Báo Thù", videoId: "zKMOgOWn8lQ" },
+        { title: "MAI", videoId: "HXWRTGbhb4U" },
+        { title: "Lật Mặt 7: Một Điều Ước", videoId: "d1ZHdosjNX8" },
+        { title: "Yêu Nhầm Bạn Thân", videoId: "d7iXT864C4w" },
+        { title: "Đào, Phở Và Piano", videoId: "c-ASaavjtPw" }
+    ];
+
+    const fullscreenVideoDiv = document.getElementById('fullscreenVideo');
+    const youtubeFrame = document.getElementById('youtubeFullscreenFrame');
+
+    function showYoutubeFullscreen(videoId) {
+        youtubeFrame.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&fs=1&modestbranding=1&rel=0`;
+        fullscreenVideoDiv.classList.remove('hidden');
+        document.body.style.overflow = 'hidden'; // Ngăn cuộn trang nền
+    }
+
+    function closeFullscreen() {
+        youtubeFrame.src = ''; // Dừng video khi đóng
+        fullscreenVideoDiv.classList.add('hidden');
+        document.body.style.overflow = ''; // Cho phép cuộn trang nền lại
+    }
+
+    // Đóng popup khi nhấn phím Escape
+    document.addEventListener('keydown', function(event) {
+        if (event.key === "Escape" && !fullscreenVideoDiv.classList.contains('hidden')) {
+            closeFullscreen();
+        }
+    });
+
+    // Đóng popup khi click ra ngoài iframe (vào vùng nền mờ)
+    fullscreenVideoDiv.addEventListener('click', function(event) {
+        // Chỉ đóng nếu click vào chính div nền (fullscreenVideoDiv) chứ không phải vào iframe con
+        if (event.target === fullscreenVideoDiv) {
+            closeFullscreen();
+        }
+    });
+
+
+    function toggleProfileMenu() {
+        const profileMenu = document.getElementById('profileMenu');
+        profileMenu.classList.toggle('hidden');
+        // Đảm bảo các menu khác đóng lại
+        document.getElementById('notificationMenu').classList.add('hidden');
+        document.getElementById('searchBar').classList.add('hidden');
+        document.getElementById('searchResults').classList.add('hidden');
+    }
+
+    function toggleNotifications() {
+        const notificationMenu = document.getElementById('notificationMenu');
+        notificationMenu.classList.toggle('hidden');
+         // Đảm bảo các menu khác đóng lại
+        document.getElementById('profileMenu').classList.add('hidden');
+        document.getElementById('searchBar').classList.add('hidden');
+        document.getElementById('searchResults').classList.add('hidden');
+    }
+
+    function toggleSearch() {
+        const searchBar = document.getElementById('searchBar');
+        searchBar.classList.toggle('hidden');
+        if (!searchBar.classList.contains('hidden')) {
+             document.getElementById('searchInput').focus(); // Tự động focus
+             // Đảm bảo các menu khác đóng lại
+             document.getElementById('profileMenu').classList.add('hidden');
+             document.getElementById('notificationMenu').classList.add('hidden');
+        } else {
+            // Xóa kết quả khi đóng thanh tìm kiếm
+             document.getElementById('searchInput').value = '';
+             document.getElementById('searchResults').innerHTML = '';
+             document.getElementById('searchResults').classList.add('hidden');
+        }
+    }
+
+    function searchMovies() {
+        const query = document.getElementById('searchInput').value.toLowerCase().trim();
+        const searchResults = document.getElementById('searchResults');
+
+        if (query.length === 0) {
+            searchResults.innerHTML = '';
+            searchResults.classList.add('hidden');
+            return;
+        }
+
+        const results = movies.filter(movie => movie.title.toLowerCase().includes(query));
+
+        if (results.length > 0) {
+             searchResults.innerHTML = results.map(movie =>
+                `<div class="p-2 text-white hover:bg-gray-700 cursor-pointer rounded" onclick="showYoutubeFullscreen('${movie.videoId}')">${movie.title}</div>`
+             ).join('');
+        } else {
+             searchResults.innerHTML = `<div class="p-2 text-gray-400">Không tìm thấy kết quả.</div>`;
+        }
+         searchResults.classList.remove('hidden'); // Hiển thị khung kết quả
+    }
+
+
+    // Hiệu ứng thanh navbar khi cuộn
+    window.addEventListener("scroll", function() {
+        let navbar = document.getElementById("navbar");
+        if (window.scrollY > 50) {
+            navbar.classList.add("scrolled");
+        } else {
+            navbar.classList.remove("scrolled");
+        }
+    });
+
+     // Đóng menu dropdown khi click ra ngoài
+    document.addEventListener('click', function(event) {
+        const profileMenu = document.getElementById('profileMenu');
+        const profileButton = profileMenu.previousElementSibling; // Nút hình ảnh profile
+        const notificationMenu = document.getElementById('notificationMenu');
+        const notificationButton = notificationMenu.previousElementSibling; // Nút chuông
+        const searchBar = document.getElementById('searchBar');
+        const searchButton = searchBar.parentElement.querySelector('.fa-search'); // Nút kính lúp
+
+        // Đóng Profile Menu
+        if (!profileMenu.classList.contains('hidden') && !profileMenu.contains(event.target) && !profileButton.contains(event.target)) {
+            profileMenu.classList.add('hidden');
+        }
+        // Đóng Notification Menu
+        if (!notificationMenu.classList.contains('hidden') && !notificationMenu.contains(event.target) && !notificationButton.contains(event.target)) {
+            notificationMenu.classList.add('hidden');
+        }
+         // Đóng Search Bar
+        if (!searchBar.classList.contains('hidden') && !searchBar.contains(event.target) && !searchButton.contains(event.target)) {
+             searchBar.classList.add('hidden');
+             // Xóa kết quả khi đóng
+             document.getElementById('searchInput').value = '';
+             document.getElementById('searchResults').innerHTML = '';
+             document.getElementById('searchResults').classList.add('hidden');
+        }
+    });
+
+    </script>
+
+    <div class="w-full h-2 bg-gray-800"></div>
+
+    <footer class="py-8 sm:py-12 text-gray-400 text-sm bg-black">
+        <div class="container mx-auto px-4">
+          <p class="mb-4">
+            <a href="https://help.netflix.com/contactus" class="hover:underline">Bạn có câu hỏi? Liên hệ với chúng tôi.</a>
+          </p>
+          <div class="mb-4">
+            <ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 text-xs sm:text-sm">
+              <li><a href="https://help.netflix.com/support/412" class="hover:underline">Câu hỏi thường gặp</a></li>
+              <li><a href="https://help.netflix.com" class="hover:underline">Trung tâm trợ giúp</a></li>
+              <li><a href="/youraccount" class="hover:underline">Tài khoản</a></li>
+              <li><a href="https://media.netflix.com/" class="hover:underline">Trung tâm đa phương tiện</a></li>
+              <li><a href="http://ir.netflix.com/" class="hover:underline">Quan hệ với nhà đầu tư</a></li>
+              <li><a href="https://jobs.netflix.com/jobs" class="hover:underline">Việc làm</a></li>
+              <li><a href="/watch" class="hover:underline">Các cách xem</a></li>
+              <li><a href="https://help.netflix.com/legal/termsofuse" class="hover:underline">Điều khoản sử dụng</a></li>
+              <li><a href="https://help.netflix.com/legal/privacy" class="hover:underline">Quyền riêng tư</a></li>
+              <li><a href="#" class="hover:underline">Tùy chọn cookie</a></li>
+              <li><a href="https://help.netflix.com/legal/corpinfo" class="hover:underline">Thông tin doanh nghiệp</a></li>
+              <li><a href="https://help.netflix.com/contactus" class="hover:underline">Liên hệ với chúng tôi</a></li>
+              <li><a href="https://fast.com" class="hover:underline">Kiểm tra tốc độ</a></li>
+              <li><a href="https://help.netflix.com/legal/notices" class="hover:underline">Thông báo pháp lý</a></li>
+              <li><a href="https://www.netflix.com/vn/browse/genre/839338" class="hover:underline">Chỉ có trên Netflix</a></li>
+            </ul>
+          </div>
+          <div class="mb-4">
+            <div class="inline-block relative w-32">
+              <label for="language-select-bottom" class="sr-only">Chọn ngôn ngữ</label>
+              <select id="language-select-bottom" name="language-select-bottom" class="block appearance-none w-full bg-gray-700 border border-gray-600 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline text-white text-sm">
+                <option value="vi">Tiếng Việt</option>
+                <option value="en">English</option>
+              </select>
+              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-400">
+                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p>Huy Vũ - Website số 1 Bắc Giang</p>
+             <p class="text-xs mt-1">Vị trí hiện tại: Bắc Giang, Bac Giang, Vietnam (Thông tin này chỉ để tham khảo)</p>
+          </div>
+        </div>
+      </footer>
+
+</body>
+</html>
