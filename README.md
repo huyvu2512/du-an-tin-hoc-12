@@ -3,7 +3,7 @@
 Chào mừng bạn đến với dự án cuối kỳ môn Tin học lớp 12! Đây là một trang web xem phim được thiết kế với giao diện hiện đại, lấy cảm hứng từ Netlfix, nhằm trình bày các kỹ năng lập trình web cơ bản.
 
 ## 📝 Thông tin dự án
-- **Tên dự án:** Website Xem Phim Huy Vũ
+- **Tên dự án:** Website Xem Phim Huy Vu
 - **Mục tiêu:** Dự án Tin học cuối học kỳ 2
 - **Lớp:** 12A2
 - **Nhóm:** Nhóm 3
@@ -31,4 +31,5 @@ Chào mừng bạn đến với dự án cuối kỳ môn Tin học lớp 12! Đ
 
 ---
 *Chúc các bạn có những giây phút xem phim vui vẻ tại Huy Vũ Movie!*
+
 
