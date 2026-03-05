@@ -8,7 +8,7 @@ Chào mừng bạn đến với dự án cuối kỳ môn Tin học lớp 12! Đ
 - **Lớp:** 12A2
 - **Nhóm:** Nhóm 3
 - **Ngày hoàn thành:** 17/04/2025
-- **Tác giả:** Huy Vũ
+- **Tác giả:** Huy Vu
 
 ## 🚀 Tính năng chính
 - **Giao diện chuẩn Netflix:** Sử dụng Tailwind CSS để tạo ra giao diện sang trọng, dark mode và responsive.
@@ -31,3 +31,4 @@ Chào mừng bạn đến với dự án cuối kỳ môn Tin học lớp 12! Đ
 
 ---
 *Chúc các bạn có những giây phút xem phim vui vẻ tại Huy Vũ Movie!*
+
