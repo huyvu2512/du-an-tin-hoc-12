@@ -1,6 +1,6 @@
 # 🎬 DỰ ÁN TIN HỌC LỚP 12 - HUY VŨ MOVIE
 
-Chào mừng bạn đến với dự án cuối kỳ môn Tin học lớp 12! Đây là một trang web xem phim được thiết kế với giao diện hiện đại, lấy cảm hứng từ Netlfix, nhằm trình bày các kỹ năng lập trình web cơ bản.
+Dự án cuối kỳ môn Tin học lớp 12! Trang web xem phim được thiết kế với giao diện hiện đại, lấy cảm hứng từ Netlfix, nhằm trình bày các kỹ năng lập trình web cơ bản.
 
 ## 📝 Thông tin dự án
 - **Tên dự án:** Website Xem Phim Huy Vu
@@ -30,6 +30,7 @@ Chào mừng bạn đến với dự án cuối kỳ môn Tin học lớp 12! Đ
 - `5.laptrinhweb.html`: Trang thông tin bổ sung.
 
 ---
-*Chúc các bạn có những giây phút xem phim vui vẻ tại Huy Vũ Movie!*
+*Dự án học tập*
+
 
 
